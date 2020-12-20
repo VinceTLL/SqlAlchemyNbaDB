@@ -7,7 +7,7 @@ from project import Base
 class Teams(Base):
     __tablename__ = 'teams'
 
-    id = Column(BigInteger, primary_key = True)
+    id = Column(Integer, primary_key = True)
     full_name = Column(String)
     abbreviation = Column(String)
     nickname = Column(String)
@@ -24,7 +24,7 @@ class Teams(Base):
 class Players(Base):
     __tablename__ = 'players'
 
-    id = Column(BigInteger, primary_key = True)
+    id = Column(Integer, primary_key = True)
     full_name = Column(String)
     first_name = Column(String)
     last_name = Column(String)
@@ -53,9 +53,9 @@ class SeasonTotalsRegularSeason(Base):
     __tablename__='regular_season_fact_table'
 
     reg_season_id = Column(Integer,Sequence('user_id_seq'), primary_key = True)
-    player_id = Column(BigInteger,ForeignKey('players.id'))
+    player_id = Column(Integer,ForeignKey('players.id'))
     season_id = Column(Integer,ForeignKey('regular_season.season_id'))
-    team_id = Column(BigInteger,ForeignKey('teams.id'))
+    team_id = Column(Integer,ForeignKey('teams.id'))
     player_age = Column(Float,nullable = True)
     game_played = Column(Integer,nullable=True)
     game_started =Column(Integer, nullable=True)

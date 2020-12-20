@@ -17,9 +17,3 @@ session = sessionmaker(bind = engine) # it will serve as a factory for new sessi
 ses =session()
 Base = declarative_base()
 obj = Schema(Base,engine,ses)
-
-# dialect name
-#dbuser
-#password
-#localhost
-#dbname
