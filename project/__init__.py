@@ -12,7 +12,7 @@ engine = create_engine('{}://{}:{}@{}/{}'.format(config['DATABASE']['dialect'],
   config['DATABASE']['password'],
   config['DATABASE']['host'],
   config['DATABASE']['db_name'] ),echo = True)
-#engine = create_engine('postgresql://postgres:Lord1988!@localhost:5432/NBA_db_test',echo = True)
+
 session = sessionmaker(bind = engine) # it will serve as a factory for new session object to talk with the DB
 ses =session()
 Base = declarative_base()
